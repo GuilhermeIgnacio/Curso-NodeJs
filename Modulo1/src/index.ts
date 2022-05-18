@@ -1,4 +1,8 @@
-const math = require("./math");
+// const math = require("./math"); Uma forma de importar
+
+// import * as math from "./math"; // Importando tudo
+// import { somar, subtrair } from "./math"; // Importando apenas algumas funções
+import math from "./math";
 
 let n1: number = 10;
 let n2: number = 2;
