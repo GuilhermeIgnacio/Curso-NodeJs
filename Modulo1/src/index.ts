@@ -1,4 +1,8 @@
-let nome: string = "Guilherme";
-let idade: number = 18;
+const math = require("./math");
 
-console.log(`Meu nome é ${nome} e eu tenho ${idade}`);
+let n1: number = 10;
+let n2: number = 2;
+
+console.log(`SOMA: ${math.somar(n1, n2)} `);
+console.log(`SUBTRAÇÃO: ${math.subtrair(n1, n2)} `);
+console.log(`MULTIPLICAÇÃO: ${math.multiplicar(n1, n2)} `);
