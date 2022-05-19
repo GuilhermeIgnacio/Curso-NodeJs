@@ -6,8 +6,16 @@ app.get("/", (req: Request, res: Response) => {
   res.send("Hello World");
 });
 
-app.get("/secreto", (req: Request, res: Response) => {
-  res.send("Você acessou a página secreta");
+app.get("/noticia/:slug", (req: Request, res: Response) => {
+  let slug: string = req.params.slug;
+  res.send(`Notícia: ${slug}`);
+});
+
+app.get("/voo/:origem-:destino", (req: Request, res: Response) => {
+  let { origem, destino } = req.params;
+  res.send(
+    `Procurando voos de ${origem.toUpperCase()} até ${destino.toUpperCase()}`
+  );
 });
 
 app.listen(port, () => {
