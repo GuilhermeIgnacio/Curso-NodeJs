@@ -7,7 +7,13 @@ router.get("/", (req: Request, res: Response) => {
     nome: "Guilherme",
     sobrenome: "Ignácio",
     idade: 19,
+    showWelcome: false,
   };
+
+  if (user.idade >= 18) {
+    user.showWelcome = true;
+  }
+
   res.render("home", {
     user,
   });
