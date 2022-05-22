@@ -11,7 +11,25 @@
     {{#user.showWelcome}}
         Você é maior de idade
     {{/user.showWelcome}}
-    
+
+    <hr>
+
+    <h2>Lista de Produtos Disponíveis</h2>
+    {{! Loop em array que tem objetos }}
+    <ul>
+        {{#user.products}}
+            <li> {{title}} - R$ {{price}} </li>
+        {{/user.products}}
+    </ul>
+    <hr>
+
+    <ul>
+
+        {{#user.frases}}
+            <li> {{.}} </li>
+        {{/user.frases}}
+
+    </ul>
 
 </body>
 </html>
