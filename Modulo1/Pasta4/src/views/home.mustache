@@ -23,10 +23,16 @@
     </ul>
     <hr>
 
+    {{! Loop em um array que tem apenas strings }}
     <ul>
 
         {{#user.frases}}
             <li> {{.}} </li>
+        {{/user.frases}}
+
+        {{! Criando o else }}
+        {{^user.frases}}
+            Sem frases por hoje :(
         {{/user.frases}}
 
     </ul>

@@ -13,7 +13,7 @@ router.get("/", (req: Request, res: Response) => {
       { title: "Produto Y", price: 15 },
       { title: "Produto Z", price: 20 },
     ],
-    frases: ["Frase 1", "Frase 2", "Frase 3"],
+    // frases: ["Frase 1", "Frase 2", "Frase 3"],
   };
 
   if (user.idade >= 18) {
