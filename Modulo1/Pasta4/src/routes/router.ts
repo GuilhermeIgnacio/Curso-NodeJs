@@ -20,21 +20,17 @@ router.get("/", (req: Request, res: Response) => {
     user.showWelcome = true;
   }
 
-  res.render("home", {
+  res.render("pages/home", {
     user,
   });
 });
 
-router.get("/noticia/:slug", (req: Request, res: Response) => {
-  let slug: string = req.params.slug;
-  res.send(`Notícia: ${slug}`);
+router.get("/contato", (req: Request, res: Response) => {
+  res.render("pages/contato");
 });
 
-router.get("/voo/:origem-:destino", (req: Request, res: Response) => {
-  let { origem, destino } = req.params;
-  res.send(
-    `Procurando voos de ${origem.toUpperCase()} até ${destino.toUpperCase()}`
-  );
+router.get("/sobre", (req: Request, res: Response) => {
+  res.render("pages/sobre");
 });
 
 export default router;
