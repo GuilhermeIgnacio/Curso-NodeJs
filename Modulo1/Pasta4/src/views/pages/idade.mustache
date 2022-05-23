@@ -1,0 +1,13 @@
+{{>partials/header}}
+    <h3>Que Ano Você Nasceu?</h3>
+<form method="GET">
+    <input type="number" name="ano" placeholder="Ano De Nascimento" autocomplete="off" /><br/>
+    <input type="submit">
+<form>
+
+{{#mostrarIdade}}
+    <hr>
+    Você tem {{idade}} anos!
+{{/mostrarIdade}}
+
+{{>partials/footer}}
