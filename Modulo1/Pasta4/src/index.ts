@@ -1,12 +1,15 @@
 import express, { Request, Response } from "express";
 import path from "path";
+import dotenv from "dotenv";
 import mustache from "mustache-express";
 
 import mainRoutes from "./routes/router";
 import painelRoutes from "./routes/painel";
 
+dotenv.config();
+
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
 app.set("view engine", "mustache");
 app.set("views", path.join(__dirname, "views"));
