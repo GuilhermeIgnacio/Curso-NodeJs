@@ -1,24 +1,32 @@
-import { Request, Response } from 'express';
+import { Request, Response } from "express";
 
-import { Product } from '../models/Product';
+import { sequelize } from "../instances/mysql";
+import { Product } from "../models/Product";
 
-export const home = (req: Request, res: Response)=>{
-    let age: number = 90;
-    let showOld: boolean = false;
+export const home = async (req: Request, res: Response) => {
+  try {
+    await sequelize.authenticate();
+    console.log("Conexão Estabelecida com Sucesso!");
+  } catch (error) {
+    console.log("Erro: ", error);
+  }
 
-    if(age > 50) {
-        showOld = true;
-    }
+  let age: number = 90;
+  let showOld: boolean = false;
 
-    let list = Product.getAll();
-    let expensiveList = Product.getFromPriceAfter(12);
+  if (age > 50) {
+    showOld = true;
+  }
 
-    res.render('pages/home', {
-        name: 'Bonieky',
-        lastName: 'Lacerda',
-        showOld,
-        products: list,
-        expensives: expensiveList,
-        frasesDoDia: []
-    });
+  let list = Product.getAll();
+  let expensiveList = Product.getFromPriceAfter(12);
+
+  res.render("pages/home", {
+    name: "Bonieky",
+    lastName: "Lacerda",
+    showOld,
+    products: list,
+    expensives: expensiveList,
+    frasesDoDia: [],
+  });
 };
